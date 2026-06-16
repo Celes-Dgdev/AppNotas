@@ -18,57 +18,47 @@
     <!-- FORMULARIO -->
     <div class="form">
 
-      <!-- FECHA -->
       <input type="date" id="fechaNota">
 
-      <!-- CONTENIDO -->
-      <textarea
-        id="contenido"
-        placeholder="Escribe tu pendiente..."
-      ></textarea>
+      <textarea id="contenido" placeholder="Escribe tu pendiente..."></textarea>
 
-      <!-- PRIORIDAD -->
       <select id="prioridad">
-    <option value="🟢">🟢</option>
-    <option value="🟡">🟡</option>
-    <option value="🔴">🔴</option>
-</select>
+        <option value="🟢">🟢</option>
+        <option value="🟡">🟡</option>
+        <option value="🔴">🔴</option>
+      </select>
 
       <button id="btnAgregar">Agregar pendiente</button>
 
     </div>
 
     <!-- BUSCADOR -->
-    <input
-      type="text"
-      id="buscar"
-      placeholder="🔎 Buscar pendiente..."
-    >
+    <input type="text" id="buscar" placeholder="🔎 Buscar pendiente...">
 
-    <!-- COLUMNAS DE PENDIENTES -->
+    <!-- LISTAS -->
     <div class="listas-container">
 
-      <!-- HOY -->
       <div class="lista-columna">
         <h2>📅 Pendientes Hoy</h2>
         <div id="notasHoy"></div>
       </div>
 
-      <!-- MAÑANA -->
       <div class="lista-columna">
-        <h2>📅 Pendientes Manana</h2>
+        <h2>📅 Pendientes Mañana</h2>
         <div id="notasManana"></div>
       </div>
 
     </div>
 
   </div>
-<footer class="footer">
-  <p class="cyan">Desarrollo de Sofware</p>
-  <p>Derechos recervados || JavaScript</p>
-  <p class="footer-sub">Celes DGz. @ 06/2026 </p>
-</footer>
-  <script src="/notas.js"></script>
+
+  <footer class="footer">
+    <p class="cyan">Desarrollo de Software</p>
+    <p>Derechos reservados || JavaScript</p>
+    <p class="footer-sub">Celes DGz. @ 06/2026</p>
+  </footer>
+
+  <script src="notas.js"></script>
 
 </body>
 </html>
