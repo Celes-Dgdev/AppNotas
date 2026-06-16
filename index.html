@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📝 Mis Notas Pro</title>
+  <link rel="stylesheet" href="notas.css">
+</head>
+<body>
+
+  <div class="grid-bg"></div>
+
+  <div class="container">
+
+    <h1>📝 Mis Notas Pro</h1>
+    <p class="subtitle">>>> Organiza tus pendientes de hoy y mañana</p>
+
+    <!-- FORMULARIO -->
+    <div class="form">
+
+      <!-- FECHA -->
+      <input type="date" id="fechaNota">
+
+      <!-- CONTENIDO -->
+      <textarea
+        id="contenido"
+        placeholder="Escribe tu pendiente..."
+      ></textarea>
+
+      <!-- PRIORIDAD -->
+      <select id="prioridad">
+    <option value="🟢">🟢</option>
+    <option value="🟡">🟡</option>
+    <option value="🔴">🔴</option>
+</select>
+
+      <button id="btnAgregar">Agregar pendiente</button>
+
+    </div>
+
+    <!-- BUSCADOR -->
+    <input
+      type="text"
+      id="buscar"
+      placeholder="🔎 Buscar pendiente..."
+    >
+
+    <!-- COLUMNAS DE PENDIENTES -->
+    <div class="listas-container">
+
+      <!-- HOY -->
+      <div class="lista-columna">
+        <h2>📅 Pendientes Hoy</h2>
+        <div id="notasHoy"></div>
+      </div>
+
+      <!-- MAÑANA -->
+      <div class="lista-columna">
+        <h2>📅 Pendientes Manana</h2>
+        <div id="notasManana"></div>
+      </div>
+
+    </div>
+
+  </div>
+<footer class="footer">
+  <p class="cyan">Desarrollo de Sofware</p>
+  <p>Derechos recervados || JavaScript</p>
+  <p class="footer-sub">Celes DGz. @ 06/2026 </p>
+</footer>
+  <script src="/notas.js"></script>
+
+</body>
+</html>

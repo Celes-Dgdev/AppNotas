@@ -1,0 +1,398 @@
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+display: flex;
+flex-direction: column;
+align-items: center;
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top,
+    #16213e,
+    #0a0a0f 40%);
+
+    color:white;
+
+    font-family:'Segoe UI',sans-serif;
+
+    overflow-x:hidden;
+
+    position:relative;
+}
+.grid-bg{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(
+    rgba(0,255,255,.08) 1px,
+    transparent 1px),
+
+    linear-gradient(
+    90deg,
+    rgba(0,255,255,.08) 1px,
+    transparent 1px);
+
+    background-size:40px 40px;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    animation:gridMove 20s linear infinite;
+}
+
+@keyframes gridMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(40px);
+    }
+}
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+    circle at 20% 20%,
+    rgba(0,255,255,.15),
+    transparent 200px),
+
+    radial-gradient(
+    circle at 80% 40%,
+    rgba(140,0,255,.15),
+    transparent 250px),
+
+    radial-gradient(
+    circle at 50% 80%,
+    rgba(0,255,150,.15),
+    transparent 250px);
+
+    z-index:-1;
+
+    animation:floatLights 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatLights{
+
+    from{
+        transform:translateY(-20px);
+    }
+
+    to{
+        transform:translateY(20px);
+    }
+}
+/* 🌌 CONTENEDOR PRINCIPAL CON MARCO NEÓN */
+.container {
+  width: 100%;
+flex: 1;
+  max-width: 650px;
+  margin: 0 auto;
+
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+
+  /* ✨ BORDE FUTURISTA */
+  border: 2px solid transparent;
+  background-clip: padding-box;
+
+  position: relative;
+  backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 25px rgba(0,255,255,.15),
+0 0 60px rgba(138,43,226,.15);
+}
+
+/* 🔥 EFECTO DE LUZ ALREDEDOR */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+
+  background: linear-gradient(
+    45deg,
+    #00f5ff,
+    #7a00ff,
+    #00ff88,
+    #00f5ff
+  );
+
+  background-size: 300% 300%;
+  animation: glowMove 6s linear infinite;
+
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+/* 🌈 ANIMACIÓN DEL NEÓN */
+@keyframes glowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🧠 TITULO */
+h1 {
+  text-align: center;
+  font-size: 32px;
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#fff;
+
+    text-shadow:
+
+    0 0 10px #00f5ff,
+
+    0 0 20px #00f5ff,
+
+    0 0 40px #00f5ff;
+}
+
+
+/* ✍️ FORMULARIO */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* INPUTS FUTURISTAS */
+input, textarea, select {
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #00f5ff;
+  box-shadow: 0 0 10px #00f5ff;
+}
+#fechaNota {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: rgb(54, 54, 54);
+  color: #b39e9e;
+}
+
+/* 🔘 BOTÓN */
+button {
+  background: linear-gradient(90deg, #00f5ff, #7a00ff);
+  padding: 10px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.4),
+    transparent);
+
+    transition:.6s;
+}
+.nueva-nota {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button:hover::before{
+
+    left:100%;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00f5ff;
+}
+
+/* 🔎 BUSCADOR */
+#buscar {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* 🧾 NOTAS */
+.nota {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #00f5ff;
+
+  transition: 0.3s;
+}
+
+.nota:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+}
+
+/* 📌 NOTA FIJADA */
+.nota.fija {
+  border-left: 4px solid gold;
+  box-shadow: 0 0 15px gold;
+}
+
+/* 🔴🟡🟢 PRIORIDAD LUZ */
+.prioridad {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.prioridad.baja {
+  background: #00ff88;
+  box-shadow: 0 0 8px #00ff88;
+}
+
+.prioridad.media {
+  background: orange;
+  box-shadow: 0 0 8px orange;
+}
+
+.prioridad.alta {
+  background: red;
+  box-shadow: 0 0 10px red;
+}
+.listas-container{
+    display: flex;
+    gap: 20px;
+}
+
+.lista-columna{
+    flex: 1;
+    flex: 1;
+    padding: 20px;
+    border-radius: 15px;
+}
+.footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer-sub {
+  font-size: 12px;
+  opacity: 0.7;
+}
+/*----------------------------------------------------*/
+/* 📱 RESPONSIVE */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+    .listas-container{
+        flex-direction: column;
+    }
+
+}
+@media (max-width: 768px) {
+
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input, textarea, select, button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #notasHoy,
+  #notasManana {
+    width: 100%;
+  }
+
+  .nueva-nota {
+    font-size: 14px;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
